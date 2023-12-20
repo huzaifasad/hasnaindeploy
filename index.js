@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
-// import addItemRoute from './Routes/addItemRoute.js';
+import addItemRoute from './Routes/addItemRoute.js';
 import getItemsRoute from './Routes/getItemsRoute.js';
 // import deleteItemsRoute from './Routes/deleteItemsRoute.js';
 // import updateItemsRoute from './Routes/updateItemsRoute.js';
@@ -33,7 +33,7 @@ mongoose.connect('mongodb+srv://husnaink467:5262@cluster0.ghk3bf3.mongodb.net/?r
     console.error('MongoDB connection error:', err);
   });
 
-// app.use('/', addItemRoute);
+app.use('/', addItemRoute);
 app.use('/', getItemsRoute);
 // app.use('/', deleteItemsRoute);
 // app.use('/', updateItemsRoute);
