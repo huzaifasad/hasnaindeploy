@@ -6,8 +6,8 @@ import bodyParser from 'body-parser';
 
 import addItemRoute from './Routes/addItemRoute.js';  // Uncomment this line
 import getItemsRoute from './Routes/getItemsRoute.js';
-// import deleteItemsRoute from './Routes/deleteItemsRoute.js';
-// import updateItemsRoute from './Routes/updateItemsRoute.js';
+import deleteItemsRoute from './Routes/deleteItemsRoute.js';
+import updateItemsRoute from './Routes/updateItemsRoute.js';
 // import { handleImageUpload } from './controllers/uploadImageController.js';
 // import multer from 'multer';
 
@@ -35,8 +35,8 @@ mongoose.connect('mongodb+srv://husnaink467:5262@cluster0.ghk3bf3.mongodb.net/?r
 
 app.use('/', addItemRoute);  // Uncomment this line
 app.use('/', getItemsRoute);
-// app.use('/', deleteItemsRoute);
-// app.use('/', updateItemsRoute);
+app.use('/', deleteItemsRoute);
+app.use('/', updateItemsRoute);
 
 // const storage = multer.memoryStorage();
 // const upload = multer({ storage: storage });
