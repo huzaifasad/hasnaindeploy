@@ -35,9 +35,9 @@ app.use('/', getItemsRoute);
 app.use('/', deleteItemsRoute);
 app.use('/', updateItemsRoute);
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
+// const storage = multer.memoryStorage();
+// const upload = multer({ storage: storage });
 
-app.post('/upload', upload.single('image'), handleImageUpload);
+// app.post('/upload', upload.single('image'), handleImageUpload);
 
 
