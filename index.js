@@ -3,29 +3,29 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+
 // import addItemRoute from './Routes/addItemRoute.js';
 import getItemsRoute from './Routes/getItemsRoute.js';
 // import deleteItemsRoute from './Routes/deleteItemsRoute.js';
 // import updateItemsRoute from './Routes/updateItemsRoute.js';
 // import { handleImageUpload } from './controllers/uploadImageController.js';
-import multer from 'multer';
+// import multer from 'multer';
 
 const app = express();
+const port = 5000;
 
-app.listen(4000);
+app.use(express.json());
+app.use(cors());
 app.use(cors({
-  origin: "http://localhost:3000", // Update to your frontend URL
-  methods: ["POST", "GET", "PUT", "DELETE"],
-  credentials: true
-}));
-
-app.use(bodyParser.json({ extended: true }));
-app.use(bodyParser.urlencoded({ extended: true }));
-
-mongoose.connect('mongodb+srv://husnaink467:5262@cluster0.ghk3bf3.mongodb.net/your-database-name?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+    origin: "", // Update to your frontend URL
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true
+  }));
+  
+  app.use(bodyParser.json({ extended: true }));
+  app.use(bodyParser.urlencoded({ extended: true }));
+app.listen(4000);
+mongoose.connect('mongodb+srv://husnaink467:5262@cluster0.ghk3bf3.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -42,5 +42,4 @@ app.use('/', getItemsRoute);
 // const upload = multer({ storage: storage });
 
 // app.post('/upload', upload.single('image'), handleImageUpload);
-
 
