@@ -17,7 +17,7 @@ const port = 5000;
 app.use(express.json());
 app.use(cors());
 app.use(cors({
-    origin: "", // Update to your frontend URL
+    origin: "https://frontnd.vercel.app", // Update to your frontend URL
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
   }));
